@@ -27,9 +27,9 @@ theme        = "hello-friend-ng"
   defaultTheme = "light"
 
 [taxonomies]
-    category = "blog"
-    tag      = "tags"
-    series   = "series"
+	category = "categories"
+	tag      = "tags"
+	series   = "series"
 
 [languages]
   [languages.en]
