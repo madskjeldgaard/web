@@ -1,0 +1,62 @@
+baseurl      = "localhost"
+title        = "Mads Kjeldgaard"
+languageCode = "en-uk"
+theme        = "hello-friend-ng"
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+  # Subtitle for home
+  homeSubtitle = "Composer and sound hacker"
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
+
+  # Metadata mostly used in document's head
+  description = "Website of composer Mads Kjeldgaard"
+  keywords = "homepage, blog"
+  images = [""]
+
+  # Directory name of your blog content (default is `content/posts`)
+  contentTypeName = "posts"
+
+  # Default theme "light" or "dark"
+  defaultTheme = "light"
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+[languages]
+  [languages.en]
+    title = "Mads Kjeldgaard"
+    subtitle = "Composer and sound hacker"
+    keywords = ""
+    copyright = ''
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "mads kjeldgaard"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
+	[[menu.main]]
+	identifier = "about"
+    name       = "About"
+    url        = "/pages/about"
+	[[menu.main]]
+	identifier = "contact"
+    name       = "Contact"
+    url        = "/pages/contact"
