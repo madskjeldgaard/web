@@ -1,4 +1,4 @@
-baseurl      = "localhost"
+baseurl      = "https://madskjeldgaard.github.io"
 title        = "Mads Kjeldgaard"
 languageCode = "en-uk"
 theme        = "hello-friend-ng"
