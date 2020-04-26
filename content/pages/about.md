@@ -5,7 +5,7 @@ draft: false
 toc: true
 ---
 
-![alt](/pr-photos/mads-kjeldgaard-nordmarka-2019-small.jpg)
+![alt](/img/small/mads-kjeldgaard-nordmarka-2019-small.jpg)
 
 ## Bio
 
@@ -63,7 +63,7 @@ In 2019 he won a [gold award for the 3D audio piece "I solens flint 1000 floder"
 [Båndmagasinet #3 - A cassette tape magazine. The piece Sværm was written for this audio magazine focused on synths](http://www.resonansrecordings.com/bandmagasinet/)
 
 ## Past concerts
-![Fritt fall 2019](/img/fritt-fall-2019.jpg)
+![Fritt fall 2019](/img/small/fritt-fall-2019.jpg)
 
 7th of March, 2020 @ Fylkingen, Stockholm, Sweden. Release concert for "Akkorder", w/ Niklas Adam and Daniel M. Karlsson
 

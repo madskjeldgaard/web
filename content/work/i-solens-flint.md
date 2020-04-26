@@ -13,6 +13,6 @@ The piece explores concepts of environment and potential using a mixture of conc
 
 [This piece won the gold award](https://vdt-icsa.de/competition/) at the International Conference on Spatial Audio's Student 3D Audio Production Competition organized by IEM in 2019.
 
-![competition](/img/mads-ispc-competition-winner-2019-small.jpg)
+![competition](/img/small/mads-ispc-competition-winner-2019-small.jpg)
 photo: ICSA 2019
 

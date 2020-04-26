@@ -1,4 +1,4 @@
-baseurl      = "https://madskjeldgaard.github.io"
+baseurl      = "https://madskjeldgaard.dk"
 title        = "Mads Kjeldgaard"
 languageCode = "en-uk"
 theme        = "hello-friend-ng"
@@ -18,7 +18,7 @@ theme        = "hello-friend-ng"
   # Metadata mostly used in document's head
   description = "Website of composer Mads Kjeldgaard"
   keywords = "homepage, blog"
-  images = ["static/pr-photos/mads-kjeldgaard-nordmarka-2019-small.jpg"]
+  images = ["/img/small/mads-kjeldgaard-nordmarka-2019-small.jpg"]
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
