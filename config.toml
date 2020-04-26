@@ -17,7 +17,7 @@ theme        = "hello-friend-ng"
 
   # Metadata mostly used in document's head
   description = "Website of composer Mads Kjeldgaard"
-  keywords = "homepage, blog"
+  keywords = "homepage, blog, supercollider, computermusic, creative coding"
   images = ["/img/small/mads-kjeldgaard-nordmarka-2019-small.jpg"]
 
   # Directory name of your blog content (default is `content/posts`)

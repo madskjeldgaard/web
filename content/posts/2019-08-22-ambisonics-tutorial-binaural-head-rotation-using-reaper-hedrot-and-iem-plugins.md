@@ -33,7 +33,7 @@ It is not necessary but advisable that you also read through and follow the [Bas
 
 ## Setting up the hedrotReceiver application
 
-[<img class="alignnone size-large wp-image-582" src="https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/hedrotReceiver-1024x882.png" alt="" width="640" height="551" srcset="https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/hedrotReceiver-1024x882.png 1024w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/hedrotReceiver-300x258.png 300w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/hedrotReceiver-768x661.png 768w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/hedrotReceiver.png 1496w" sizes="(max-width: 640px) 100vw, 640px" />][8]
+![receiver](/img/small/hedrotReceiver.png)
 
 To get information from the head tracker you need to first connect it to your computer using a usb cable and then open up the hedrotReceiver application.
 
@@ -44,8 +44,8 @@ Then, press the &#8220;HEADTRACKER IS OFF&#8221; button to activate the head tra
 Before setting anything up, you have to calibrate your head tracker. Click the &#8220;CALIBRATION&#8221; button on the main screen to enter the calibration settings.
 
 ### Calibration
+![calibration](/img/small/calibrationScreen.png)
 
-[<img class="alignnone size-large wp-image-586" src="https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/calibrationScreen-789x1024.png" alt="" width="640" height="831" srcset="https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/calibrationScreen-789x1024.png 789w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/calibrationScreen-231x300.png 231w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/calibrationScreen-768x996.png 768w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/calibrationScreen.png 956w" sizes="(max-width: 640px) 100vw, 640px" />][9]
 
 At the bottom of this screen, you can see how well your head tracker is performing. The normalized magnetometer and accelerometer readings in the bottom of the screen should ideally be somewhere around the center but they probably aren&#8217;t. If this is the first time you are using your head tracker, then you need to calibrate the accelerometer (only needed this one time) by clicking the &#8220;CALIBRATE ACCELEROMETER&#8221; button. Follow the steps written there and return to the calibration screen. Verify that the reading in the bottom middle of the screen is now somewhere around the middle.
 
@@ -91,7 +91,8 @@ _Note: It is advised to always open the port in the plugin before setting it up 
 
 Back to hedrot. Open the OSC settings again and set the port number to 1234 or whatever number you put in as the port in SceneRotator. Click the red &#8220;do not transmit&#8221; buttons to activate transmission. Verify that you see values changing on the right side of your OSC settings window.
 
-[<img class="alignnone size-large wp-image-583" src="https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/transmitting-1024x345.png" alt="" width="640" height="216" srcset="https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/transmitting-1024x345.png 1024w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/transmitting-300x101.png 300w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/transmitting-768x259.png 768w, https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/transmitting.png 1490w" sizes="(max-width: 640px) 100vw, 640px" />][11]
+![transmitting](/img/small/transmitting.png)
+
 
 ## Conclusion
 
@@ -107,6 +108,4 @@ To save yourself the pain of repeating this laborous setup process, you can save
  [6]: https://github.com/abaskind/hedrot
  [7]: https://plugins.iem.at/docs/tutorial_basicrouting/
  [8]: https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/hedrotReceiver.png
- [9]: https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/calibrationScreen.png
  [10]: https://plugins.iem.at/docs/osc/
- [11]: https://www.madskjeldgaard.dk/wp-content/uploads/2019/08/transmitting.png

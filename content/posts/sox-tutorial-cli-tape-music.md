@@ -46,6 +46,7 @@ sudo pacman -S sox
 ## What's included
 
 ### The manual
+![sox manual](/img/small/sox-man.png)
 
 To read the manual, open up a terminal and type `man sox`.
 

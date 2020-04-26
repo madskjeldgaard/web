@@ -32,6 +32,7 @@ The parameters are stringed together after the `silence` keyword in the sox comm
 ```bash
 sox infile.wav outfile.wav silence above-periods duration threshold
 ```
+
 ## Trimming silence from beginning and end of one file
 To trim the beginning of a file until the audio is above 1% in volume for more than 0.1 seconds, you would write a command like this:
 ```bash
@@ -58,6 +59,9 @@ Our final command for chopping files by silence will then end up looking like th
 sox infile.wav outfile.wav silence 1 0.1 1% 1 0.1 1% : newfile : restart
 ```
 ## Chopping three bursts
+
+![alt](/img/small/threebursts.png)
+
 As an example of the above, let us have a look at a sound file containing three short noise bursts.
 
 The sound file is called threebursts.wav and can be [downloaded here](/audio/threebursts.wav).

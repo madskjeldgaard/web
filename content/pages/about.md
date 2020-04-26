@@ -33,7 +33,10 @@ In 2019 he won a [gold award for the 3D audio piece "I solens flint 1000 floder"
 {{< bandcamp-album 4064609208 >}}
 {{< bandcamp-album 3383663379 >}}
 
+---
+
 ## Media appearances
+![Ambisonics microphone in studio 3](/img/small/ambeo_studi3.jpg)
 
 ### Articles and interviews
 [Algoritmerne får os til at danse, interview with Danish daily Information about live coding](https://www.information.dk/kultur/2018/12/algoritmerne-faar-danse-naar-ved-lidt-kodning-vaerdsaetter-fart-komposition-paa-samme-maade-balletdanser-vaerdsaetter-svanesoeen)
@@ -61,6 +64,8 @@ In 2019 he won a [gold award for the 3D audio piece "I solens flint 1000 floder"
 
 ### Others
 [Båndmagasinet #3 - A cassette tape magazine. The piece Sværm was written for this audio magazine focused on synths](http://www.resonansrecordings.com/bandmagasinet/)
+
+---
 
 ## Past concerts
 ![Fritt fall 2019](/img/small/fritt-fall-2019.jpg)
@@ -96,6 +101,8 @@ March 1st, 2018, Kammersalen, Musikhuset Århus, Denmark. Livecode / improvisati
 February 23rd, 2018, Aarhus, Denmark @ Spark festival. Livecode / improvisation.
 
 February 15th, 2018, Musikhuset Århus, Denmark. Livecode / improvisation.
+
+---
 
 ## Press photos
 

@@ -1,5 +1,5 @@
 ---
-title: "SoX tutorial: SoX tutorial: Batch processing audio on the command line"
+title: "SoX tutorial: Batch processing audio on the command line"
 date: 2020-04-26T10:07:25+02:00
 draft: false
 toc: true

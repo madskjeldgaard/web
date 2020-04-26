@@ -9,6 +9,8 @@ post_grid_post_settings:
   - 'a:14:{s:9:"post_skin";s:4:"flat";s:19:"custom_thumb_source";s:101:"https://www.madskjeldgaard.dk/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png";s:16:"thumb_custom_url";s:0:"";s:17:"font_awesome_icon";s:0:"";s:23:"font_awesome_icon_color";s:0:"";s:22:"font_awesome_icon_size";s:0:"";s:17:"custom_youtube_id";s:0:"";s:15:"custom_vimeo_id";s:0:"";s:21:"custom_dailymotion_id";s:0:"";s:14:"custom_mp3_url";s:0:"";s:20:"custom_soundcloud_id";s:0:"";s:16:"custom_video_MP4";s:0:"";s:16:"custom_video_OGV";s:0:"";s:17:"custom_video_WEBM";s:0:"";}'
 
 ---
+![open frameworks + vim](/img/small/of-vim.png)
+
 It is possible to get a nice development environment on Linux (and other platforms) using NeoVim and a few plugins and settings.
 
 This dev environment includes snippets, autocomplete, debugging and smart code suggestions for methods.
@@ -57,6 +59,7 @@ Now, from the root of your open frameworks projects you can run the following co
 This will output a file called `compile_commands.json` containing the tags.
 
 ## YouCompleteMe
+![open frameworks + vim](/img/gif/of-ycm.gif)
 
 [<img class="alignnone size-full wp-image-874" src="https://www.madskjeldgaard.dk/wp-content/uploads/2020/04/of-ycm.gif" alt="" width="953" height="1004" />][3]
 
@@ -122,6 +125,7 @@ And then some nice keybindings to work with YouCompleteMe:
     
 
 # Snippets
+![open frameworks + vim](/img/gif/of-snippets.gif)
 
 [<img class="alignnone size-full wp-image-873" src="https://www.madskjeldgaard.dk/wp-content/uploads/2020/04/of-snippets.gif" alt="" width="953" height="1004" />][8]
   

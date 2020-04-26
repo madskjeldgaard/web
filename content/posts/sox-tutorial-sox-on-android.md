@@ -8,6 +8,8 @@ tags:
   - sox
 ---
 
+![sox on android](/img/small/sox-android-2.jpg)
+
 In this tutorial, I will cover how to install and setup SoX on android devices using Termux.
 
 Termux is a free &#8220;Android terminal emulator and Linux environment app that works directly with no rooting or setup required&#8221;.

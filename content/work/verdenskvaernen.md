@@ -4,6 +4,8 @@ date: 2020-04-26T11:06:06+02:00
 draft: false
 ---
 
+![alt](/img/small/ambi-mic-park-2020.jpg)
+
 Verdenskværnen ("The world grinder") is a composition inspired by the Swedish author August Strindberg's rambling, autobiographical novel "Inferno" (1898) as well as the sounds of gentrification. 
 
 It explores different ideas of sonic tactility in it's sound material.
