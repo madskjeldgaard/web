@@ -1,4 +1,4 @@
-baseurl      = "madskjeldgaard.dk"
+baseurl      = "https://madskjeldgaard.dk"
 title        = "Mads Kjeldgaard"
 languageCode = "en-uk"
 theme        = "hello-friend-ng"
