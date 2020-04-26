@@ -24,7 +24,7 @@ The default synth sound in SuperCollider is a cheesy old piano sound. If you hav
 Imagine a utopian world where the default cheese-piano-synth has been replaced by a nicer, kind of gameboy like synth. Well that world is here and now.
 
 Overwriting the default is actually easy. All you have to do is write a new SynthDef called `\default`. Evaluate this piece of code:
-```smalltalk
+```javascript
 // A simple triangle wave synth in stereo 
 (
 SynthDef.new(\default, {

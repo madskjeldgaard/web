@@ -10,7 +10,7 @@ theme        = "hello-friend-ng"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Subtitle for home
-  homeSubtitle = "Composer and sound hacker"
+  homeSubtitle = "Composer and developer"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -18,7 +18,7 @@ theme        = "hello-friend-ng"
   # Metadata mostly used in document's head
   description = "Website of composer Mads Kjeldgaard"
   keywords = "homepage, blog"
-  images = [""]
+  images = ["static/pr-photos/mads-kjeldgaard-nordmarka-2019-small.jpg"]
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
@@ -34,13 +34,13 @@ theme        = "hello-friend-ng"
 [languages]
   [languages.en]
     title = "Mads Kjeldgaard"
-    subtitle = "Composer and sound hacker"
-    keywords = ""
+    subtitle = "Composer and developer"
+    keywords = "computer music, supercollider, rust, vim, linux"
     copyright = ''
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "mads kjeldgaard"
+      logoText = "madskjeldgaard"
       logoHomeLink = "/"
     # or
     #
