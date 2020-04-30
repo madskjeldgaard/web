@@ -6,6 +6,7 @@ toc: true
 images:
 tags:
   - sox
+  - tutorial
 ---
 
 SoX has a very effective and rather precise way of semi-automatically chopping a sound file into smaller sound files.

@@ -5,6 +5,9 @@ type: post
 date: 2019-08-19T10:36:35+00:00
 url: /supercollider-tutorial-mass-producing-synthdefs/
 featured_image: /wp-content/uploads/2019/08/supercollider-laptop-room-e1566211773173.jpg
+tags:
+  - tutorial
+  - supercollider
 
 ---
 In SuperCollider, one of the most common ways of making sounds is by first defining a sort of recipe for a UGEN patch in a SynthDef and then from that recipe produce Synths that make sounds.

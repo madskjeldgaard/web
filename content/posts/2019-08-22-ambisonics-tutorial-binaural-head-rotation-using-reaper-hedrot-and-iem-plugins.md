@@ -6,6 +6,10 @@ date: 2019-08-22T08:56:36+00:00
 url: /ambisonics-tutorial-binaural-head-rotation-using-reaper-hedrot-and-iem-plugins/
 featured_image: /wp-content/uploads/2019/08/headphones.jpg
 draft: false
+tags:
+  - ambisonics
+  - tutorial
+  - microcontroller
 ---
 [Hedrot][1] is an inexpensive head rotator that you can build yourself and attach to any pair of head phones, based on a small microcontroller (a [Teensy][2]) with an attached sensor board that measures your head&#8217;s rotation, pitch, tilt, etc.
 

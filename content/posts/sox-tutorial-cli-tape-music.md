@@ -6,6 +6,8 @@ toc: true
 images:
 tags:
   - sox
+  - tutorial
+
 ---
 
 SoX is a very powerful command line audio processing tool. You can think of it as a sort of command line equivalent of Audacity but with a text based interface that let's you perform powerful audio operations by typing just a few words in your computer's terminal.

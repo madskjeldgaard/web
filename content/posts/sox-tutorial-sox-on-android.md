@@ -6,6 +6,8 @@ toc: true
 images:
 tags:
   - sox
+  - tutorial
+
 ---
 
 ![sox on android](/img/small/sox-android-2.jpg)

@@ -1,4 +1,4 @@
-baseurl      = "https://madskjeldgaard.dk"
+baseurl      = "http://madskjeldgaard.dk"
 title        = "Mads Kjeldgaard"
 languageCode = "en-uk"
 theme        = "hello-friend-ng"
@@ -48,15 +48,21 @@ theme        = "hello-friend-ng"
     # alt = "Your example logo alt text"
 
   # And you can even create generic menu
-  [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
+	  [[menu.main]]
+    identifier = "posts"
+    name       = "posts"
     url        = "/posts"
+
+	[[menu.main]]
+    identifier = "work"
+    name       = "work"
+    url        = "/pages/work"
+
 	[[menu.main]]
 	identifier = "about"
-    name       = "About"
+    name       = "about"
     url        = "/pages/about"
 	[[menu.main]]
 	identifier = "contact"
-    name       = "Contact"
+    name       = "contact"
     url        = "/pages/contact"

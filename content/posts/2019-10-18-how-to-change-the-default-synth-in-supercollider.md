@@ -4,15 +4,11 @@ author: mads
 type: post
 date: 2019-10-18T12:42:12+00:00
 url: /how-to-change-the-default-synth-in-supercollider/
-enclosure:
-  - |
-    |
-        https://www.madskjeldgaard.dk/wp-content/uploads/2019/10/new-default-synth.mp4
-        19174104
-        video/mp4
-        
-
+tags:
+  - supercollider
+  - tutorial
 ---
+
 The default synth sound in SuperCollider is a cheesy old piano sound. If you have ever tried the event pattern examples in the documentation of SuperCollider or been in the process of testing some pattern specifics of your own, you will have heard this extremely unconvincing synthesizer:
 
 <pre><code class="language-supercollider">&lt;br />().play

@@ -6,7 +6,9 @@ date: 2019-08-05T17:46:09+00:00
 url: /supercollider-how-to-render-patterns-as-sound-files-using-nrt/
 featured_image: /wp-content/uploads/2019/08/supercollider-laptop-room-e1566211773173.jpg
 draft: false
-
+tags:
+  - tutorial
+  - supercollider
 ---
 
 ![alt](/wp-content/uploads/2019/08/supercollider-laptop-room-e1566211773173.jpg)

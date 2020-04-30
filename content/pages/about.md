@@ -17,26 +17,13 @@ He works at The Norwegian Center for Arts and Technology (aka [Notam](https://no
 
 As a developer, he [contributes to various open source software projects](https://github.com/madskjeldgaard) related to digital art.
 
-In 2019 he won a [gold award for the 3D audio piece "I solens flint 1000 floder" at the International Spatial Audio Conference](/work/i-solens-flint).
-
-## Work
-### 3D audio
-
-[Verdenskværnen](/work/verdenskvaernen)
-
-[I solens flint 1000 floder](/work/i-solens-flint)
-
-### Releases
-{{< bandcamp-track 3987525293 >}}
-{{< bandcamp-album 162975171 >}}
-{{< bandcamp-album 1070203104 >}}
-{{< bandcamp-album 4064609208 >}}
-{{< bandcamp-album 3383663379 >}}
+In 2019 he won a [gold award at the International Spatial Audio Conference](/work/i-solens-flint).
 
 ---
 
 ## Media appearances
-![Ambisonics microphone in studio 3](/img/small/ambeo_studi3.jpg)
+
+{{< soundcloud-track 589324038 >}}
 
 ### Articles and interviews
 [Algoritmerne får os til at danse, interview with Danish daily Information about live coding](https://www.information.dk/kultur/2018/12/algoritmerne-faar-danse-naar-ved-lidt-kodning-vaerdsaetter-fart-komposition-paa-samme-maade-balletdanser-vaerdsaetter-svanesoeen)
@@ -44,6 +31,8 @@ In 2019 he won a [gold award for the 3D audio piece "I solens flint 1000 floder"
 [Algoritmer og koder på livescenen, interview with Artisten](https://www.artisten.dk/cgi-files/mdmgfx/file-922-592358-13165.pdf)
 
 ### Guest mixes
+[Vintage Electronic And Tape Music From Scandinavia for NTS Radio and The Lake Radio](https://soundcloud.com/thelakeradio/mads-kjeldgaard-mixtape-vintage-electronic-and-tape-music-from-scandinavia)
+
 [Guest mix for Conditional Radio on Resonance EXTRA](https://www.mixcloud.com/resonanceextra/conditional-30-mads-kjeldgaard-19th-september-2018/)
 
 ### Features on podcasts/radio shows/DJ mixes

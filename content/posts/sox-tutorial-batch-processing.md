@@ -5,7 +5,8 @@ draft: false
 toc: true
 images:
 tags:
-  - sox
+ - tutorial
+ - sox
 ---
 
 To make full use of SoX' potential for batch processing we will be using a bit of command line wizardry.
@@ -48,6 +49,7 @@ for file in *.wav; do sox "$file" "mono_$file" channels 1; done
 ```
 
 ## Convert to 48khz sample rate
+
 ```bash
 for file in *.wav; do sox "$file" "48khz_$file" rate 48k; done
 ```
