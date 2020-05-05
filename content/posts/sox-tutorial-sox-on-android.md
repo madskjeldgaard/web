@@ -5,8 +5,9 @@ draft: false
 toc: true
 images:
 tags:
-  - sox
-  - tutorial
+- sox
+- tutorial
+- termux
 
 ---
 
