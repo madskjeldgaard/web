@@ -216,75 +216,6 @@ LFO30 -. width .-> LFO5
 LFO31 -. width .-> LFO23
 {{</mermaid>}}
 
-#### Example of lfo network patched to voice
-With the same network above, we can illustrate how it is patched to the input parameters of a VortexVoice.
-
-If there are more voice parameters than lfos, the lfos will wrap around and some of them control several parameters.
-
-{{<mermaid>}}
-flowchart LR
-LFO0 -. wet100 .-> VOICE
-LFO1 -. ringf100 .-> VOICE
-LFO2 -. wet101 .-> VOICE
-LFO3 -. delay101 .-> VOICE
-LFO4 -. delayfb101 .-> VOICE
-LFO5 -. decaytime101 .-> VOICE
-LFO6 -. delaywidth101 .-> VOICE
-LFO7 -. modFreq101 .-> VOICE
-LFO8 -. modAmount101 .-> VOICE
-LFO9 -. fblowcut101 .-> VOICE
-LFO10 -. wet102 .-> VOICE
-LFO11 -. winsize102 .-> VOICE
-LFO12 -. pitch102 .-> VOICE
-LFO13 -. pd102 .-> VOICE
-LFO14 -. td102 .-> VOICE
-LFO15 -. wet103 .-> VOICE
-LFO16 -. ringf103 .-> VOICE
-LFO17 -. wet104 .-> VOICE
-LFO18 -. chpredelay104 .-> VOICE
-LFO19 -. chrate104 .-> VOICE
-LFO20 -. chdepth104 .-> VOICE
-LFO21 -. chphasediff104 .-> VOICE
-LFO22 -. wet105 .-> VOICE
-LFO23 -. delay105 .-> VOICE
-LFO24 -. delayfb105 .-> VOICE
-LFO25 -. decaytime105 .-> VOICE
-LFO26 -. delaywidth105 .-> VOICE
-LFO27 -. modFreq105 .-> VOICE
-LFO28 -. modAmount105 .-> VOICE
-LFO29 -. fblowcut105 .-> VOICE
-LFO30 -. wet106 .-> VOICE
-LFO31 -. freq106 .-> VOICE
-LFO0 -. phase106 .-> VOICE
-LFO1 -. wet107 .-> VOICE
-LFO2 -. phaserrate107 .-> VOICE
-LFO3 -. phaserdepth107 .-> VOICE
-LFO4 -. wet108 .-> VOICE
-LFO5 -. freq108 .-> VOICE
-LFO6 -. res108 .-> VOICE
-LFO7 -. gain108 .-> VOICE
-LFO8 -. type108 .-> VOICE
-LFO9 -. wet109 .-> VOICE
-LFO10 -. ringf109 .-> VOICE
-LFO11 -. wet110 .-> VOICE
-LFO12 -. delay110 .-> VOICE
-LFO13 -. delayfb110 .-> VOICE
-LFO14 -. decaytime110 .-> VOICE
-LFO15 -. delaywidth110 .-> VOICE
-LFO16 -. modFreq110 .-> VOICE
-LFO17 -. modAmount110 .-> VOICE
-LFO18 -. fblowcut110 .-> VOICE
-LFO19 -. wet1000 .-> VOICE
-LFO20 -. offset1000 .-> VOICE
-LFO21 -. reclvl1000 .-> VOICE
-LFO22 -. prelvl1000 .-> VOICE
-LFO23 -. timerate1000 .-> VOICE
-LFO24 -. fb1000 .-> VOICE
-LFO25 -. jumpToStart1000 .-> VOICE
-LFO26 -. pan1005 .-> VOICE
-{{</mermaid>}}
-
-
 ###  The tape machine: VortexVoice
 The Vortex system consists of several interconnected voices. 
 These voices are controlled using the multiplexer described above.
@@ -350,5 +281,4 @@ FX5 --> VAR --> SO
 VAR --> MIX
 
 {{</mermaid>}}
-
 
