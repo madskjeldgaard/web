@@ -22,12 +22,18 @@ For years I've been fascinated with the music and ideas of cybernetic music comp
 
 Vink and Kayn worked with [cybernetics](https://en.wikipedia.org/wiki/Cybernetics): They would set up enormous (physical) systems with feedback as a central idea; feedback in both sound and control (the latter by patching cords in synthesizers and sound modules) to create complexities in sound on a microscopic, granular scale and on larger time scales. 
 
+{{< bandcamp-album 1070203104 >}}
+
 This resonated deeply with me along with a want for a system that would be able to programmatically generate such small and large scale structures in composition and performance from simple gestures in sound and control. Or even better: To have a system which seems to have a will of it's own, a vibrating structure which may be affected or disturbed by the performer (me) but never fully controlled, leading to a range of surprises. In my piece [States of Emergency](https://shop.conditional.club/album/states-of-emergency) I achieved this somewhat by manually performing recursive sound effect transformations controlled by complex low frequency oscillators - iterating over the results for days on end in a DAW, this process became laborous and I started dreaming of automating this process to be able to setup and define such systems more easily. 
+
+{{< vimeo 238351530 >}}
 
 A few years later I participated in a workshop with [Jérôme Noetinger who works with reel to reel tape machines as instruments](https://www.youtube.com/watch?v=pnZ55jQe8jA) for improvisation by setting up tape loops, (re)injecting sounds into them and varying their playback speed. Working with the materiality of the sound in this way really fascinated me and so this core concept of a digital varispeed tape loop is at the center of the Vortex system. Other inspirations for this part of the project are [Eliane Radigue's feedback works](https://youtu.be/C_3Fu8YfSdI), [Giovanni Lami's outdoors tape loop sessions](https://vimeo.com/238351530) as well as [Valerio Tricoli's tape loop live performances](https://www.youtube.com/watch?v=J7nDhTk705s). 
 
+With these inspirations in mind, the question becomes: Is it possible to design a system which allows to work on both small and large scale sonic structures, incorporating extreme sound processing that is easily influenced but impossible to control? 
 
 ## Design goals
+![controllers](https://raw.githubusercontent.com/madskjeldgaard/vortex/master/documentation/vortex_controllers.JPG)
 
 - **You will never master this instrument**: Each time the system is used, it is reconfigured in a new and slightly random way making it necessary to relearn it and find new sweet spots.
 - **Gestures have unforeseable consequences**: Whatever gesture you put into the system (through code or controllers) should have consequences that are neither random nor predictable, like a [Lorenz system](https://en.wikipedia.org/wiki/Lorenz_system). 
@@ -39,14 +45,58 @@ A few years later I participated in a workshop with [Jérôme Noetinger who work
 - **Extremely dynamic**: The whole system may be reconfigured and repatched by executing a command or pushing a button. 
 
 ## Technical details
-![controllers](https://raw.githubusercontent.com/madskjeldgaard/vortex/master/documentation/vortex_controllers.JPG)
 
-Vortex itself is an interface for controlling several VortexVoices. It allows to set these voices up in feedback loops, interconnect them and maintain a common control input for them all. 
+{{<mermaid>}}
+graph TB
 
-In other words: It is designed as an API.
+subgraph vortex
+Voice1 --> Voice2
+Voice1 --> Voice3
+
+Voice2 --> Voice1
+Voice2 --> Voice3
+
+Voice3 --> Voice1
+Voice3 --> Voice2
+end
+
+SI{SoundIn}
+
+SI --> Voice1
+SI --> Voice2
+SI --> Voice3
+
+C[control input]
+C -.-> Voice1
+C -.-> Voice2
+C -.-> Voice3
+
+SO{SoundOut}
+Voice1 --> SO
+Voice2 --> SO
+Voice3 --> SO
+
+{{</mermaid>}}
+
+Vortex itself is an interface for controlling several VortexVoices. It allows to set these voices up in feedback loops, interconnect them and maintain a common control interface for them all. 
+
+Each VortexVoice can be thought of as a varispeed tape loop with extreme processing, feedback and an esoteric control interface.
+
+
+### Source code
+
+Vortex is designed as an API so it is easy to interact with.
+
+It is completely open source. It is written using the SuperCollider programming language and may easily be forked and instrospected. You can [find the source code here](github.com/madskjeldgaard/vortex).
+
+It is [licensed under GPL3.0 like SuperCollider itself](https://github.com/madskjeldgaard/vortex/blob/master/LICENSE.md).
 
 ### Controlling vortex
 Vortex may be controlled by live coding with it or using physical controllers like MIDI controllers, OSC devices and HID devices. 
+
+Controlling it using controllers is made easy thanks to the [Modality-toolkit project](https://github.com/ModalityTeam/Modality-toolkit).
+
+Vortex may also be controlled by livecoding the voices or using custom event types for SuperCollider patterns (work in progress).
 
 {{<mermaid>}}
 graph TB
@@ -60,56 +110,180 @@ end
 B --> D(multiplexer)
 C --> D
 
-D --> E(vortex)
+D --> E(vortex voice)
 D --> E
 D --> E
 D --> E
 D --> E
 D --> E
-
-style E fill:#BD1E2E
-style G fill:#8BCEF0
-style F fill:#8BCEF0
 
 E --> F{sound out}
 {{</mermaid>}}
+
 ### Multiplexing control data: VortexFlux
 Input data is multiplexed by an algorithm called VortexFlux (based on Alberto de Campo's Influx package) which makes one or a few inputs become many outputs (the exact number may be decided upon initialization). 
+
+For more info on this approach and Influx, [this article explains the idea nicely](https://www.3dmin.org/research/open-development-and-design/influx/).
 
 It then passes those many outputs through further data warping algorithms to increase the complexity of the control data and further distance them from the gesture put in to the system. 
 
 The steps are :
 1. Weighting: Multiply the input with a random weight
 2. Envelopes: Use the input of the previous as an index into a random envelope. This works sort of like a control rate wavetable.
-3. LFO: The input of the previous is used to control a network of lfos. This step is optional. Additionally, the lfo network may be configured in a feedback mode with the individual lfo's in the network controlling eachother's frequency alongside the control input.
-4. Map the mulitplexed control data to the parameters of a VortexVoice.
-
+3. LFO: The input of the previous is used to control a network of lfos. This step is optional. Additionally, the lfo network may be configured in a feedback mode with the individual lfos in the network controlling each other's frequency alongside the control input.
+4. Map the multiplexed control data to the parameters of a VortexVoice.
 
 {{<mermaid>}}
-graph TB
+graph LR
 
-F((control)) --> A
-A((multiplexer)) --> B((in * w))
-A --> C((in * w))
-A --> D((in * w))
-A --> E((in * w))
+M((multiplexer)) 
+C((control)) 
 
-B --> G((env))
-C --> H((env))
-D --> I((env))
-E --> J((env))
+W1((in * w))
+W2((in * w))
+W3((in * w))
+W4((in * w))
 
+E1((env))
+E2((env))
+E3((env))
+E4((env))
 
-G -.-> K((lfo))
-H -.-> L((lfo))
-I -.-> M((lfo))
-J -.-> N((lfo))
+L1((lfo))
+L2((lfo))
+L3((lfo))
+L4((lfo))
 
-K -.-> O{voice}
-L -.-> O{voice}
-M -.-> O{voice}
-N -.-> O{voice}
+O{voice}
+
+C --> M
+M --> W1 --> E1 --> L1
+M --> W2 --> E2 --> L2
+M --> W3 --> E3 --> L3
+M --> W4 --> E4 --> L4
+
+subgraph "optional: lfos in feedback network"
+L1 -.-> L4
+L2 -.-> L1
+L3 -.-> L2
+L4 -.-> L3
+end
+
+L1 --> O
+L2 --> O
+L3 --> O
+L4 --> O
+
 {{</mermaid>}}
+
+#### Example of LFO feedback network
+
+This example illustrates an lfo feedback network in a VortexVoice. In this example there are 32 lfos, each matching up with the output of a VortexFlux instance.
+
+{{<mermaid>}}
+flowchart TB
+LFO0 -. width .-> LFO17
+LFO1 -. width .-> LFO5
+LFO2 -. width .-> LFO20
+LFO3 -. width .-> LFO8
+LFO4 -. width .-> LFO17
+LFO5 -. width .-> LFO28
+LFO6 -. width .-> LFO21
+LFO7 -. width .-> LFO29
+LFO8 -. width .-> LFO9
+LFO9 -. width .-> LFO23
+LFO10 -. width .-> LFO20
+LFO11 -. width .-> LFO29
+LFO12 -. width .-> LFO11
+LFO13 -. width .-> LFO14
+LFO14 -. width .-> LFO13
+LFO15 -. width .-> LFO1
+LFO16 -. width .-> LFO10
+LFO17 -. width .-> LFO24
+LFO18 -. width .-> LFO26
+LFO19 -. width .-> LFO22
+LFO20 -. width .-> LFO5
+LFO21 -. width .-> LFO5
+LFO22 -. width .-> LFO23
+LFO23 -. width .-> LFO10
+LFO24 -. width .-> LFO9
+LFO25 -. width .-> LFO13
+LFO26 -. width .-> LFO15
+LFO27 -. width .-> LFO2
+LFO28 -. width .-> LFO2
+LFO29 -. width .-> LFO23
+LFO30 -. width .-> LFO5
+LFO31 -. width .-> LFO23
+{{</mermaid>}}
+
+#### Example of lfo network patched to voice
+With the same network above, we can illustrate how it is patched to the input parameters of a VortexVoice.
+
+If there are more voice parameters than lfos, the lfos will wrap around and some of them control several parameters.
+
+{{<mermaid>}}
+flowchart LR
+LFO0 -. wet100 .-> VOICE
+LFO1 -. ringf100 .-> VOICE
+LFO2 -. wet101 .-> VOICE
+LFO3 -. delay101 .-> VOICE
+LFO4 -. delayfb101 .-> VOICE
+LFO5 -. decaytime101 .-> VOICE
+LFO6 -. delaywidth101 .-> VOICE
+LFO7 -. modFreq101 .-> VOICE
+LFO8 -. modAmount101 .-> VOICE
+LFO9 -. fblowcut101 .-> VOICE
+LFO10 -. wet102 .-> VOICE
+LFO11 -. winsize102 .-> VOICE
+LFO12 -. pitch102 .-> VOICE
+LFO13 -. pd102 .-> VOICE
+LFO14 -. td102 .-> VOICE
+LFO15 -. wet103 .-> VOICE
+LFO16 -. ringf103 .-> VOICE
+LFO17 -. wet104 .-> VOICE
+LFO18 -. chpredelay104 .-> VOICE
+LFO19 -. chrate104 .-> VOICE
+LFO20 -. chdepth104 .-> VOICE
+LFO21 -. chphasediff104 .-> VOICE
+LFO22 -. wet105 .-> VOICE
+LFO23 -. delay105 .-> VOICE
+LFO24 -. delayfb105 .-> VOICE
+LFO25 -. decaytime105 .-> VOICE
+LFO26 -. delaywidth105 .-> VOICE
+LFO27 -. modFreq105 .-> VOICE
+LFO28 -. modAmount105 .-> VOICE
+LFO29 -. fblowcut105 .-> VOICE
+LFO30 -. wet106 .-> VOICE
+LFO31 -. freq106 .-> VOICE
+LFO0 -. phase106 .-> VOICE
+LFO1 -. wet107 .-> VOICE
+LFO2 -. phaserrate107 .-> VOICE
+LFO3 -. phaserdepth107 .-> VOICE
+LFO4 -. wet108 .-> VOICE
+LFO5 -. freq108 .-> VOICE
+LFO6 -. res108 .-> VOICE
+LFO7 -. gain108 .-> VOICE
+LFO8 -. type108 .-> VOICE
+LFO9 -. wet109 .-> VOICE
+LFO10 -. ringf109 .-> VOICE
+LFO11 -. wet110 .-> VOICE
+LFO12 -. delay110 .-> VOICE
+LFO13 -. delayfb110 .-> VOICE
+LFO14 -. decaytime110 .-> VOICE
+LFO15 -. delaywidth110 .-> VOICE
+LFO16 -. modFreq110 .-> VOICE
+LFO17 -. modAmount110 .-> VOICE
+LFO18 -. fblowcut110 .-> VOICE
+LFO19 -. wet1000 .-> VOICE
+LFO20 -. offset1000 .-> VOICE
+LFO21 -. reclvl1000 .-> VOICE
+LFO22 -. prelvl1000 .-> VOICE
+LFO23 -. timerate1000 .-> VOICE
+LFO24 -. fb1000 .-> VOICE
+LFO25 -. jumpToStart1000 .-> VOICE
+LFO26 -. pan1005 .-> VOICE
+{{</mermaid>}}
+
 
 ###  The tape machine: VortexVoice
 The Vortex system consists of several interconnected voices. 
@@ -133,42 +307,47 @@ This and the specific sound effect algorithms are organized externally in the [S
 {{<mermaid>}}
 graph TB
 
-W[control input]
-W --> I
+C[control input]
+M[multiplexer]
+C --> M
 
-I[multiplexer]
-I -.-> B
-I -.-> C
-I -.-> D
-I -.-> E
-I -.-> F
-I -.-> G
+M -.-> FX1
+M -.-> FX2
+M -.-> FX3
+M -.-> FX4
+M -.-> FX5
+M -.-> VAR
+M -.-> MIX
+
+SI(SoundIn)
+SI --> MIX
 
 
-A(SoundIn)
-A --> B
+FX1[Delay]
+FX2[Reverb]
+FX3[PitchShift]
+FX4[FreqShift]
+FX5[Ring Modulation]
 
 subgraph FXCHAIN
-B((Delay))
-C((Pitchshift))
-D((Reverb))
-E((FreqShift))
-
-B --> C
-C --> D
-D --> E
+FX1 --> FX2 --> FX3 --> FX4 --> FX5
 end
+
+MIX((Mixer))
+OV1((Other voice))
+OV2((Other voice))
 
 subgraph MIXING
-H((Other voice)) --> F
-Z((Other voice)) --> F
-E --> F(Mixer)
+OV1 --> MIX
+OV2 --> MIX
+MIX --> FX1
 end
 
-G --> H
-F --> G(Varispeed Loop)
-G --> Z
-G --> SoundOut
+VAR[Varispeed looper]
+SO(SoundOut)
+
+FX5 --> VAR --> SO
+VAR --> MIX
 
 {{</mermaid>}}
 

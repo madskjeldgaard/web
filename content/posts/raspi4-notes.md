@@ -266,3 +266,4 @@ Now, if you've setup your well tuned Raspberry Pi in an installation at a fancy 
 * [How to automatically connect to wifi on startup](https://raspberrypihq.com/how-to-connect-your-raspberry-pi-to-wifi/)
 * [PureData on headless Raspberry Pi](http://fredrikolofsson.com/f0blog/?q=node/630)
 * [building supercollider for piCore linux](http://fredrikolofsson.com/f0blog/?q=node/672)
+* [Setting up Arch Arm on Raspberry Pi 4](http://roosnaflak.com/tech-and-research/setting-up-arch-arm-raspberry-pi-4/)
