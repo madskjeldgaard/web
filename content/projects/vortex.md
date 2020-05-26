@@ -1,5 +1,5 @@
 ---
-title: "Vortex"
+title: "Vortex: A system for turbulent tape music"
 date: 2020-05-22T10:56:16+02:00
 draft: false
 toc: true
@@ -131,10 +131,11 @@ The steps are :
 1. Weighting: Multiply the input with a random weight
 2. Envelopes: Use the input of the previous as an index into a random envelope. This works sort of like a control rate wavetable.
 3. LFO: The input of the previous is used to control a network of lfos. This step is optional. Additionally, the lfo network may be configured in a feedback mode with the individual lfos in the network controlling each other's frequency alongside the control input.
-4. Map the multiplexed control data to the parameters of a VortexVoice.
+4. Scale the data using presets to center around sweet spots.
+5. Map the multiplexed control data to the parameters of a VortexVoice.
 
 {{<mermaid>}}
-graph LR
+graph TB
 
 M((multiplexer)) 
 C((control)) 
@@ -154,6 +155,12 @@ L2((lfo))
 L3((lfo))
 L4((lfo))
 
+P((Preset))
+SC1((scale))
+SC2((scale))
+SC3((scale))
+SC4((scale))
+
 O{voice}
 
 C --> M
@@ -162,21 +169,66 @@ M --> W2 --> E2 --> L2
 M --> W3 --> E3 --> L3
 M --> W4 --> E4 --> L4
 
-subgraph "optional: lfos in feedback network"
+subgraph "optional: lfo network"
 L1 -.-> L4
 L2 -.-> L1
 L3 -.-> L2
 L4 -.-> L3
 end
 
-L1 --> O
-L2 --> O
-L3 --> O
-L4 --> O
+subgraph "Scale using preset center points and bandwidth"
+P -.-> SC1
+P -.-> SC2
+P -.-> SC3
+P -.-> SC4
+end
+
+L1 --> SC1 --> O
+L2 --> SC2 --> O
+L3 --> SC3 --> O
+L4 --> SC4 --> O
 
 {{</mermaid>}}
 
-#### Example of LFO feedback network
+### Closeup of LFO mapping
+{{<mermaid>}}
+graph TB
+IN[Control]
+INX[Xfade amount]
+X[Crossfade control]
+FB[LFO Feedback]
+OUT
+OSC[VarSaw]
+SC[Scale]
+
+IN -- 0.0-1.0 --> SC -- 0.001-100.0hz: Frequency --> OSC
+INX -. 0.0-1.0 .-> X
+FB -. 0.0-1.0: Shape .-> OSC 
+OSC -- 0.0-1.0 --> X
+IN --> X --> OUT
+{{</mermaid>}}
+
+### TODO: preset scaling
+{{<mermaid>}}
+graph TD
+IN[Control]
+OUT
+
+P(Preset)
+
+C[ctrl: Center point]
+BW[ctrl: Bandwidth]
+S[Scaler]
+P -.-> C
+P -.-> BW
+C-- 0.33 --> S
+BW-- 0.1 --> S
+
+S -- range: 0.23-0.43 --> OUT
+IN -- range:0.0-1.0 --> S
+{{</mermaid>}}
+
+### Example of LFO feedback network
 
 This example illustrates an lfo feedback network in a VortexVoice. In this example there are 32 lfos, each matching up with the output of a VortexFlux instance.
 
