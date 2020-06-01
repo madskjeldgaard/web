@@ -334,3 +334,11 @@ VAR --> MIX
 
 {{</mermaid>}}
 
+## Resources
+- [Designing Mappings for Musical Interfaces Using Preset Interpolation](http://www.nime.org/proceedings/2012/nime2012_159.pdf)
+- [Influx](https://www.3dmin.org/research/open-development-and-design/influx/)
+
+## Acknowledgements
+Parts of this was developed at [Notam](https://notam.no) as part of my work there.
+The documentation and data flow was made as part of Marije Baalman's worksession [Mapping my mapping](https://justaquestionofmapping.info/).
+[Influx](https://github.com/supercollider-quarks/Influx) by Alberto de Campo is central to this system. 
