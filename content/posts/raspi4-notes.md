@@ -192,7 +192,7 @@ Then reboot, and run `aplay -l` to verify it isn't there anymore.
 ## Install a real-time kernel
 One of the most important things you can do to improve any Linux system's audio performance is installing a real-time-kernel. On the Raspberry Pi, you need to compile this kernel yourself. [There are instructions for doing so here](https://lemariva.com/blog/2018/07/raspberry-pi-preempt-rt-patching-tutorial-for-kernel-4-14-y).
 
-Compiling a kernel takes a lot of time, but my colleague at [Notam](https://notam.no), Thom Johansen, has built a [great RT-kernel for the Raspberry Pi 4 that you can download here](https://users.notam.no/~thomj/rt-kernel.tar.gz). For any other kind of Raspberry Pi, you are on your own (see the link above which has a guide for how to do this).
+Compiling a kernel takes a lot of time, but my colleague at [Notam](https://notam.no), Thom Johansen, has built a [great RT-kernel for the Raspberry Pi 4 that you can download here](http://users.notam.no/~thomj/rt-kernel-gcc_8_3_0.tar.gz). For any other kind of Raspberry Pi, you are on your own (see the link above which has a guide for how to do this).
 
 _A big fat warning_: It's a good idea to [back up your sd card at this point, if you have important data on it](https://thepihut.com/blogs/raspberry-pi-tutorials/17789160-backing-up-and-restoring-your-raspberry-pis-sd-card). Screwing up the kernel installation can get you in a complicated situation.
 
@@ -328,7 +328,7 @@ nvim test.scd -c "SCNvimStart"
 
 ## Controlling the pi using a phone
 
-![raspi termux](/img/small/raspi-termux.png)
+![raspi termux](/img/full/raspi-termux.png)
 
 If you installed ssh on your Raspberry Pi you can access it from any computer using the `ssh` program. 
 
@@ -353,6 +353,86 @@ And now you're in your Pi on your phone and can do everything you would be able 
 ## Using the Raspberry Pi for networked audio
 
 [This blog post](/posts/raspi-zita-njbridge) describes a way to use the Raspberry Pi in a networked audio configuration.
+
+## Watchdog
+
+If you are using your Pi for an installation, setting up a watchdog can be a good idea. If your Pi gets overexcited or crashes, the watchdog will reboot the system (which as a consequence will trigger whatever startup script you have installed, if any).
+
+```
+sudo apt install watchdog
+```
+
+Open up the config file for the watchdog: `/etc/watchdog.conf`
+
+And uncomment/add the following:
+```
+max-load-1 = 24
+min-memory = 1
+watchdog-device = /dev/watchdog
+watchdog-timeout=15
+```
+
+The watchdog can be run and activated automatically using systemd. This is done using the following commands:
+```
+sudo systemctl enable watchdog
+sudo systemctl start watchdog
+```
+
+To test if the watchdog is doing it's job, you can stress the system by creating a so-called fork bomb which will make the system crash by recursively calling a function until the Pi chokes up. 
+
+On the pi (not your main computer!), execute the following fork bomb:
+```bash
+forkbomb(){ forkbomb | forkbomb & }; forkbomb
+```
+Wait a bit and then see your pi crash. After choking up, it should automatically reboot itself. If it does this, your watchdog is doing it's job.
+
+## Backing up images
+
+It is possible to back up and compress your SD card containing your Raspberry Pi installation so that it's easy to recall later on, flash it to more cards or share it online.
+
+See the official [guide for this](https://www.raspberrypi.org/documentation/linux/filesystem/backup.md).
+
+But in a nutshell:
+
+On your main (unix/Linux) computer:
+
+Run `lsblk` in a terminal to see which partitions are available.
+
+Then plug in the sd card from the Pi into the computer and repeat the command above and see which partition was added. 
+This is your sd card. Look at the size to verify that it matches your sd card.
+
+Normally this is called something like `sda` or `sdb` but on my Arch Linux computer it looks like this, where the `mmcblk0` is the sd card:
+```bash
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+mmcblk0
+│    179:0    0  29,7G  0 disk
+├─mmcblk0p1
+│    179:1    0 440,6M  0 part
+├─mmcblk0p2
+│    179:2    0     1K  0 part
+├─mmcblk0p5
+│    179:5    0    32M  0 part /run/media
+├─mmcblk0p6
+│    179:6    0   256M  0 part /run/media
+├─mmcblk0p7
+│    179:7    0  19,5G  0 part /run/media
+└─mmcblk0p8
+     259:4    0   9,5G  0 part /run/media
+nvme0n1
+│    259:0    0 238,5G  0 disk
+├─nvme0n1p1
+│    259:1    0   512M  0 part
+├─nvme0n1p2
+│    259:2    0   230G  0 part /
+└─nvme0n1p3
+     259:3    0     8G  0 part [SWAP]
+```
+
+Then, using the information that the `mmcblk0` partition is the sd card, we can run the following command to first create an image from the partition and then compress it into a tarball ( warning: the resulting files may be quite large, depending on the size of the sd card! ):
+
+```bash
+sudo dd bs=4M if=/dev/mmcblk0 | gzip > mega-badass-pi-image.img.gz
+```
 
 ## Preconfigured images
 

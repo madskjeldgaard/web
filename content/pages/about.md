@@ -5,15 +5,17 @@ draft: false
 toc: true
 ---
 
-![alt](/img/small/mads-kjeldgaard-nordmarka-2019-small.jpg)
+{{< vimeonoheader 458966794>}}
 
 ## Bio
 
 Mads Kjeldgaard (b. 1988 Horsens, Denmark) is an electronic music composer.
 
-He has studied Electronic Music Composition at the Danish Institute of Electronic Music (DIEM) at the Royal Academy of Music and has a degree in journalism from the Danish School of Media and Journalism.
+His main field of interest as a composer is computer music. Using selfauthored algorithmic systems and DIY electronics, he explores ideas of time, perception and "living" sound environments. By expressing himself mainly in software, his compositions often end up as code outlining the conditions of composition, rather than the specificities of the artform. 
 
-He works at The Norwegian Center for Arts and Technology (aka [Notam](https://notam.no)) in Oslo and is part of nyMusikk’s Composer Group.
+Kjeldgaard has been making electronic music since childhood. In his formative years he became interested in making sample-based hiphop music. This has manifested itself in a lifelong curiosity in the art of sampling as well as the acquisition, archiving and manipulation of sampleable material - from digging through piles of smelly vinyl records on thrift store floors to exploring the world of timbres with a microphone.
+
+He has studied Electronic Music Composition at the Danish Institute of Electronic Music (DIEM) at the Royal Academy of Music and has a degree in journalism from the Danish School of Media and Journalism. He works at The Norwegian Center for Arts and Technology (aka [Notam](https://notam.no)) in Oslo and is part of nyMusikk’s Composer Group.
 
 As a developer, he [contributes to various open source software projects](https://github.com/madskjeldgaard) related to digital art.
 
@@ -95,5 +97,10 @@ February 15th, 2018, Musikhuset Århus, Denmark. Livecode / improvisation.
 
 ## Press photos
 
-* [Photo 1: Nordmarka. By Sofie Amalie Klougart](/pr-photos/mads-kjeldgaard-nordmarka-pr-photo.jpg_0001.jpg)
-* [Photo 2: Nordmarka. By Sofie Amalie Klougart](/pr-photos/mads-kjeldgaard-nordmarka-pr-photo.jpg_0002.jpg)
+[press photo 1](https://madskjeldgaard.dk/pr-photos/mads-kjeldgaard-press-photo-2020-photo-cred-Sofie-Amalie-Klougart_4.jpg)
+[press photo 2](https://madskjeldgaard.dk/pr-photos/mads-kjeldgaard-press-photo-2020-photo-cred-Sofie-Amalie-Klougart_2.jpg)
+[press photo 3](https://madskjeldgaard.dk/pr-photos/mads-kjeldgaard-press-photo-2020-photo-cred-Sofie-Amalie-Klougart_9.jpg)
+[press photo 4](https://madskjeldgaard.dk/pr-photos/mads-kjeldgaard-press-photo-2020-photo-cred-Sofie-Amalie-Klougart_10.jpg)
+
+<!-- * [Photo 1: Nordmarka. By Sofie Amalie Klougart](/pr-photos/mads-kjeldgaard-nordmarka-pr-photo.jpg_0001.jpg)
+* [Photo 2: Nordmarka. By Sofie Amalie Klougart](/pr-photos/mads-kjeldgaard-nordmarka-pr-photo.jpg_0002.jpg) -->
