@@ -12,19 +12,22 @@ theme        = "hello-friend-ng"
   # Subtitle for home
   homeSubtitle = "Composer and developer"
 
+  #homeVimeo="458966794"
+  homeBG="/img/small/mads-kjeldgaard-press-photo-2020-photo-cred-Sofie-Amalie-Klougart_9.jpg"
+
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
 
   # Metadata mostly used in document's head
   description = "Website of composer Mads Kjeldgaard"
   keywords = "homepage, blog, supercollider, computermusic, creative coding"
-  images = ["/img/small/mads-kjeldgaard-nordmarka-2019-small.jpg"]
+  images = ["/img/small/mads-kjeldgaard-press-photo-2020-photo-cred-Sofie-Amalie-Klougart_9.jpg"]
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
 
   # Default theme "light" or "dark"
-  defaultTheme = "light"
+  defaultTheme = "dark"
 
 [taxonomies]
 	category = "categories"
@@ -57,6 +60,11 @@ theme        = "hello-friend-ng"
     identifier = "work"
     name       = "work"
     url        = "/pages/work"
+
+	[[menu.main]]
+    identifier = "software"
+    name       = "software"
+    url        = "/pages/software"
 
 	[[menu.main]]
 	identifier = "about"
