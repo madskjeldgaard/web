@@ -27,6 +27,9 @@ In 2019 he won a [gold award at the International Spatial Audio Conference](/wor
 
 {{< soundcloud-track 589324038 >}}
 
+### Reviews
+[Klassekampen: Kall og respons](https://klassekampen.no/utgave/2020-09-21/kall-og-respons) - Review of concert in the forest of Ekeberg Parken in Oslo.
+
 ### Articles and interviews
 [Algoritmerne får os til at danse, interview with Danish daily Information about live coding](https://www.information.dk/kultur/2018/12/algoritmerne-faar-danse-naar-ved-lidt-kodning-vaerdsaetter-fart-komposition-paa-samme-maade-balletdanser-vaerdsaetter-svanesoeen)
 

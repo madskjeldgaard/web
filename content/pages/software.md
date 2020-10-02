@@ -4,7 +4,7 @@ date: 2020-06-19T09:30:50+02:00
 draft: false
 ---
 
-![particular](/img/small/particular.png)
+{{<vimeonoheader 450023889 >}}
 
 Most of the software I develop as part of my practice is made available on [Github](https://github.com/madskjeldgaard/).
 
@@ -16,6 +16,7 @@ Most of the software I develop as part of my practice is made available on [Gith
 - [osccli](https://github.com/madskjeldgaard/osccli) - OSC Communication on the command line. Written in fast and safe Rust.
 - [cookiecutter quark](https://github.com/madskjeldgaard/cookiecutter-quark) - A cookiecutter template to help you automatically generate a SuperCollider Quark (package)
 - [sox-tricks](https://github.com/madskjeldgaard/sox-tricks) - Command line tools that make batch processing, editing and organization of audio files a fast and painless task.
+- [nornsgenerate](https://github.com/madskjeldgaard/nornsgenerate)
 
 ## SuperCollider packages
 - [KloudGen](https://github.com/madskjeldgaard/kloudgen) - Multichannel capable cloud synthesis
@@ -28,6 +29,12 @@ Most of the software I develop as part of my practice is made available on [Gith
 ## Vim
 - [vim-norns](https://github.com/madskjeldgaard/vim-norns) - Programming environment for working with the norns sound computer remotely
 - [vim-supercollider-snippets](https://github.com/madskjeldgaard/vim-supercollider-snippets) - Supercharging SuperCollider code writing using snippets
+
+## Arch Linux packages
+I maintain a number of audio related packages for my Linux distribution of choice: Arch Linux. 
+You may find them on the Arch User Repository (AUR):
+
+[madskjeldgaard's aur packages](https://aur.archlinux.org/)
 
 ## Other tools
 - [rofi jack](https://github.com/madskjeldgaard/rofi-jack) - Keyboard centric jack audio management using the rofi app launcher
