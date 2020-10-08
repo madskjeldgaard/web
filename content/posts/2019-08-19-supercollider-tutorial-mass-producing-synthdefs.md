@@ -1,13 +1,13 @@
 ---
 title: 'SuperCollider tutorial: Mass producing SynthDefs'
 author: mads
-type: post
 date: 2019-08-19T10:36:35+00:00
-url: /supercollider-tutorial-mass-producing-synthdefs/
-featured_image: /wp-content/uploads/2019/08/supercollider-laptop-room-e1566211773173.jpg
 tags:
   - tutorial
   - supercollider
+images:
+- /img/small/supercollider-laptop-room.jpg
+- 
 
 ---
 In SuperCollider, one of the most common ways of making sounds is by first defining a sort of recipe for a UGEN patch in a SynthDef and then from that recipe produce Synths that make sounds.
@@ -30,7 +30,8 @@ The trick here is basically to put the SynthDef inside of a do function, which w
 
 Let’s start by making the function to be used inside of the SynthDef:
 
-<pre><code class="language-supercollider">// Function for buffer player synth defs
+```javascript 
+// Function for buffer player synth defs
 ~bufplayerfunc = {|numchans=1|
    {|rate=1, buffer, trigger=1, start=0, loop=0, amp=1, out=0|
 
@@ -48,7 +49,7 @@ Let’s start by making the function to be used inside of the SynthDef:
       Out.ar(out, sig * amp);
    }
 };
-</code></pre>
+```
 
 As you can see, the synth function is wrapped in an outer function which takes one argument: the number of channels. The function returns the actual synth function we need to put inside of a SynthDef.
 
@@ -56,11 +57,12 @@ Using the numchans argument, the PlayBuf UGEN is set to appropriate channel numb
 
 The next step is to put this function inside of a SynthDef and call it 64 times. One time for each number of channels we want to have:
 
-<pre><code class="language-supercollider">(1..64).do{|chanNum|
+```javascript
+(1..64).do{|chanNum|
    var name = "bufplayer" ++ chanNum;
    SynthDef.new(name, ~bufplayerfunc.value(chanNum)).add;
 };
-</code></pre>
+```
 
 Now, whenever you need to use this synthdef, you can call it by it’s basename (“bufplayer” in this case) plus the number of channels. For example: A 33 channel buffer player would then look like `Synth(\bufplayer33, [\buffer, b])`.
 
@@ -76,7 +78,7 @@ We will organize the filter functions in an Event (which is a sort of Dictionary
 
 Then, we will use a sort of do-function called `keysValuesDo` to get the filter names and functions and then for each of them create a SynthDef containing that particular filter.
 
-# The wrap function and it&#8217;s arguments
+## The wrap function and it&#8217;s arguments
 
 When you add a function to your synthdef using .wrap like this, the outer SynthDef gets the arguments you defined in the filter functions. You do not have to define them with the freq argument of the synthdef itself because **they will automatically be added to your synthdef**. So our SynthDef will get a `cutoff` argument when we use SynthDef.wrap inside of it with our functions.
 
@@ -86,7 +88,7 @@ This part of SynthDef.wrap is very important and a bit confusing too. Anything y
 
 The argument in question (in our case the _in_ argument) will then be removed from the outer function&#8217;s list of arguments. The prepended argument is in other words overwritten and becomes unavailable to the outside SynthDef argument list.
 
-<pre><code class="language-supercollider">( 
+```javascript
 // Filter functions organized in a dictionary (Event)
 // The signal of our synth will be passed in as the first argument
 f = (
@@ -119,12 +121,11 @@ f.keysValuesDo{|filtername, filterfunction|
 };
 
 )
-
-</code></pre>
-
+```
 Now, let us test these synths:
 
-<pre><code class="language-supercollider">// Test low pass version
+```javascript
+// Test low pass version
 Synth("sawlpf", [\freq, 222, \cutoff, 100]);
 
 // Test high pass version
@@ -132,7 +133,7 @@ Synth("sawhpf", [\freq, 831, \cutoff, 1000]);
 
 // Test band pass version
 Synth("sawbpf", [\freq, 323, \cutoff, 1000]);
-</code></pre>
+```
 
 Once you have gotten into the habit of using SynthDef.wrap it really is a flexible and powerful way of making Synths which takes care of a lot of the plumbing you otherwise need to do whenever you write a SynthDef, and it allows you to really experiment with different patching ideas.
 

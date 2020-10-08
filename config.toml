@@ -57,8 +57,8 @@ theme        = "hello-friend-ng"
     url        = "/posts"
 
 	[[menu.main]]
-    identifier = "work"
-    name       = "work"
+    identifier = "sound"
+    name       = "sound"
     url        = "/pages/work"
 
 	[[menu.main]]

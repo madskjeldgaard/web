@@ -1,14 +1,14 @@
 ---
 title: 'SuperCollider tutorial: Easily render generative compositions as sound files using NRT'
 author: mads
-type: post
 date: 2019-08-05T17:46:09+00:00
-url: /supercollider-how-to-render-patterns-as-sound-files-using-nrt/
-featured_image: /wp-content/uploads/2019/08/supercollider-laptop-room-e1566211773173.jpg
 draft: false
 tags:
   - tutorial
   - supercollider
+images:
+- /img/small/supercollider-laptop-room.jpg
+
 ---
 
 ![alt](/wp-content/uploads/2019/08/supercollider-laptop-room-e1566211773173.jpg)
@@ -39,7 +39,8 @@ The process can be divided into the following steps:
 
 First step is to make a SynthDef. SynthDefs are sort of recipes for sound patches that the server uses to make sound. In this case, it will be a very boring sine, aptly named \boring_sine. Note the use of the .store method here. This will save the synthdef as a file on your system and make it available to the NRT process later on.
 
-<pre><code class="language-supercollider">SynthDef.new(\boring_sine, {|freq, dur|
+```javascript
+SynthDef.new(\boring_sine, {|freq, dur|
 // A percussive envelope
 var env = EnvGen.ar(Env.perc, gate: 1, timeScale:dur);
 
@@ -49,34 +50,35 @@ var sig = SinOsc.ar(freq);
 // Apply envelope to sine wave and output
 Out.ar(0, env * sig)
 }).store;
-</code></pre>
+```
 
 We will keep the pattern super simple: Random scale degrees played using our \boring_sine synth, each of which a quarter of beat in duration.
 
 The total duration of the pattern will be infinite for now (the length of this will automatically be truncated by the Score conversion process).
 
-<pre><code class="language-supercollider">p = Pbind(
+```javascript
+p = Pbind(
 \instrument, \boring_sine,
 \dur, 0.25,
 \degree, Pwhite(0,10)
 );
-</code></pre>
-
+```
 And now, let us convert this to a score:
 
-<pre><code class="language-supercollider">p = p.asScore(60); // Duration of 60 beats
-</code></pre>
-
+```javascript
+p = p.asScore(60); // Duration of 60 beats
+```
 Finally, we render the score
 
-<pre><code class="language-supercollider">(
+```javascript
+(
 // Destination path and file name
 ~outFile = "~/Desktop/yo.wav";
 
 // Render the score as wav file
 p.recordNRT(outputFilePath: ~outFile.asAbsolutePath, headerFormat: "WAV");
 )
-</code></pre>
+```
 
 # Lets make this interesting: Iteration
 
@@ -86,7 +88,8 @@ Rendering one random melody is quite nice, but let us exploit the fact that our 
 
 First, let us wrap what we wrote up until this point in a function that we can call as often as we want.
 
-<pre><code class="language-supercollider">~renderMelody = { |pattern, destinationPath|
+```javascript
+~renderMelody = { |pattern, destinationPath|
 
 // Convert pattern to score
 var patscore = pattern.asScore(60); // Duration of 60 beats
@@ -94,24 +97,25 @@ var patscore = pattern.asScore(60); // Duration of 60 beats
 // Render the score as a wav file
 patscore.recordNRT(outputFilePath: destinationPath.asAbsolutePath, headerFormat: "WAV");
 };
-</code></pre>
+```
 
 Let us keep the pattern as is
 
-<pre><code class="language-supercollider">p = Pbind(
+```javascript
+p = Pbind(
 \instrument, \boring_sine,
 \dur, 0.25,
 \degree, Pwhite(0,10)
 );
-</code></pre>
-
+```
 And then render 10 versions of it
 
-<pre><code class="language-supercollider">// Now make 10 different melodies and save them to your desktop as wave files
+```javascript
+// Now make 10 different melodies and save them to your desktop as wave files
 10.do{|index|
 ~renderMelody.value(p, "~/Desktop/boringMelody" ++ index ++ ".wav");
 };
-</code></pre>
+```
 
  [1]: http://doc.sccode.org/Guides/Non-Realtime-Synthesis.html
  [2]: http://doc.sccode.org/Classes/Score.html

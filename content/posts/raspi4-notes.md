@@ -7,6 +7,10 @@ tags:
 - supercollider
 - raspberrypi
 - termux
+images:
+- /img/small/raspi4-quad2.jpg
+- /img/full/raspi-termux.png
+- /img/small/termux-ssh-arm.jpg
 ---
 
 ![raspberry pi 4 setup with fireface ucx and quad speakers](/img/small/raspi4-quad2.jpg)
