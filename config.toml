@@ -6,7 +6,7 @@ theme        = "hello-friend-ng"
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
+  dateformNum     = "02-01-2006"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Subtitle for home
@@ -21,7 +21,7 @@ theme        = "hello-friend-ng"
   # Metadata mostly used in document's head
   description = "Website of composer Mads Kjeldgaard"
   keywords = "homepage, blog, supercollider, computermusic, creative coding"
-  images = ["/img/small/mads-kjeldgaard-press-photo-2020-photo-cred-Sofie-Amalie-Klougart_9.jpg"]
+  images = ["/img/small/states-of-emergency.jpg", "/img/small/mads-kjeldgaard-press-photo-2020-photo-cred-Sofie-Amalie-Klougart_9.jpg"]
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
