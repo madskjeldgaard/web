@@ -5,6 +5,13 @@ draft: false
 toc: true
 tags: 
 - arch
+- linux
+- supercollider
+- csound
+- tidal
+- vim
+- reaper
+- sox
 images:
 - /img/small/archlogo.png
 
@@ -17,6 +24,12 @@ These are notes I have been taking while making packages for the [Arch User Repo
 If you have a tolerance for YouTube videos, then maybe [this video will be helpful to you](https://youtu.be/crnGzF43aoc).
 
 It is also recommend to read the official guide on how to create packages: [Creating packages](https://wiki.archlinux.org/index.php/Creating_packages).
+
+The manual for `PKGBUILD` is a nice resource for information as well:
+
+```
+man PKGBUILD
+```
 
 ## Creating a repository
 This was one of the steps of creating an AUR package that confused me the most. How do you "create a repository" like you would on Github by logging in to the web interface and clicking a button that would create a repo?
@@ -204,11 +217,16 @@ git add -f .SRCINFO PKGBUILD
 git commit .SRCINFO PKGBUILD -m "important change"
 ```
 
+
+
 ---
 
 ## Random notes
 
 Here are some random things I learned by doing them the wrong way on the AUR (and getting feedback from more experienced contributors).
+
+## Naming packages based on version control sources (like Github)
+[... is covered here](https://wiki.archlinux.org/index.php/VCS_package_guidelines)
 
 ### Make-flags should be avoided
 
@@ -222,7 +240,13 @@ This is handled by the package system for you.
 ### An AUR package cannot touch a user's home directory
 Some software needs to go into the home directory of the user. This is not allowed on the AUR.
 
-### Don't include depencencies covered in the `base-devel` group
+### Do not include dependencies covered in the `base-devel` group
 Make sure the `makedepends=()` array does not contain things already covered in the `base-devel` group (like `gcc` and `make`):
 
 [https://wiki.archlinux.org/index.php/PKGBUILD#makedepends](https://wiki.archlinux.org/index.php/PKGBUILD#makedepends)
+
+```bash
+# List all packages in base-devel group
+pacman -Sg base-devel
+```
+

@@ -11,7 +11,7 @@ toc: true
 
 Mads Kjeldgaard (b. 1988 Horsens, Denmark) is an electronic music composer.
 
-His main field of interest as a composer is computer music. Using selfauthored algorithmic systems and DIY electronics, he explores ideas of time, perception and "living" sound environments. By expressing himself mainly in software, his compositions often end up as code outlining the conditions of composition, rather than the specificities of the artform. 
+His main field of interest as a composer is computer music. Using selfauthored algorithmic systems and DIY electronics, he explores psychoacoustics as well as ideas of time, perception and "living" sound environments. By expressing himself mainly in software, his compositions often end up as code outlining the conditions of composition, rather than the specificities of the artform. 
 
 Kjeldgaard has been making electronic music since childhood. In his formative years he became interested in making sample-based hiphop music. This has manifested itself in a lifelong curiosity in the art of sampling as well as the acquisition, archiving and manipulation of sampleable material - from digging through piles of smelly vinyl records on thrift store floors to exploring the world of timbres with a microphone.
 
@@ -29,6 +29,7 @@ In 2019 he won a [gold award at the International Spatial Audio Conference](/wor
 
 ### Reviews
 [Klassekampen: Kall og respons](https://klassekampen.no/utgave/2020-09-21/kall-og-respons) - Review of concert in the forest of Ekeberg Parken in Oslo.
+[Ballade.no: Opp i tretoppar, ned i mold og inn i skog](https://www.ballade.no/kunstmusikk/opp-i-tretoppar-ned-i-mold-og-inn-i-skog/) - Same as above.
 
 ### Articles and interviews
 [Algoritmerne får os til at danse, interview with Danish daily Information about live coding](https://www.information.dk/kultur/2018/12/algoritmerne-faar-danse-naar-ved-lidt-kodning-vaerdsaetter-fart-komposition-paa-samme-maade-balletdanser-vaerdsaetter-svanesoeen)
