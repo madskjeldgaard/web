@@ -1,5 +1,5 @@
 ---
-title: "14bit Midi Teensy Supercollider"
+title: "Working with 14bit Midi using a Teensy microcontroller and Supercollider"
 date: 2020-10-21T15:48:28+02:00
 draft: false
 images:
