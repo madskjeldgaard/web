@@ -27,8 +27,10 @@ Most of the software I develop as part of my practice is made available on [Gith
 - [Else](https://github.com/madskjeldgaard/Else) - A collection of useful and/or weird pattern classes
 
 ## Vim
+- [supercollider-h4x-nvim](https://github.com/madskjeldgaard/supercollider-h4x-nvim) - A collection of hacks and additional functionality for SuperCollider code projects and development.
+- [reaper-nvim](https://github.com/madskjeldgaard/reaper-nvim) - Reaper plugin for neovim. Remote control your daw with almost 4000 actions without leaving your text editor.
+- [vim-scdoc-snippets](https://github.com/madskjeldgaard/vim-scdoc-snippets) - Help file snippets for SuperCollider to speed up documentation processes.
 - [vim-norns](https://github.com/madskjeldgaard/vim-norns) - Programming environment for working with the norns sound computer remotely
-- [vim-supercollider-snippets](https://github.com/madskjeldgaard/vim-supercollider-snippets) - Supercharging SuperCollider code writing using snippets
 
 ## Arch Linux packages
 I maintain a number of audio related packages for my Linux distribution of choice: Arch Linux. 
@@ -36,7 +38,11 @@ You may find them on the Arch User Repository (AUR):
 
 [madskjeldgaard's aur packages](https://aur.archlinux.org/)
 
-## Other tools
+## jack
+- [jack_xruntotal](https://github.com/madskjeldgaard/jack_xruntotal) - Display total number of xruns in a status bar friendly way.
+- [jack_meter_simple](https://github.com/madskjeldgaard/jack_meter_simple) - Display amplitude of a signal in Jack in a status bar friendly way
 - [rofi jack](https://github.com/madskjeldgaard/rofi-jack) - Keyboard centric jack audio management using the rofi app launcher
+
+## Other tools
 - [ranger-sox](https://github.com/madskjeldgaard/ranger-sox) - Audio conversion and manipulation plugin for the Ranger File Manager 
 - [ranger-lame](https://github.com/madskjeldgaard/ranger-lame) - mp3 conversion plugin for the the Ranger File Manager 

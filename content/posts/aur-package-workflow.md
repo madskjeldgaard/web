@@ -6,12 +6,6 @@ toc: true
 tags: 
 - arch
 - linux
-- supercollider
-- csound
-- tidal
-- vim
-- reaper
-- sox
 images:
 - /img/small/archlogo.png
 
@@ -250,3 +244,16 @@ Make sure the `makedepends=()` array does not contain things already covered in 
 pacman -Sg base-devel
 ```
 
+### Using git hash as version number
+
+For packages based on version control systems such as git (these packages normally have a name ending in `-git`), a trick to update the package version is to create a function that extracts the git hash automatically.
+
+Add this to your PKGBUILD:
+```bash
+pkgver() {
+	cd "$srcdir/${pkgname}"
+
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+```
+Quit your text editor, then run `makepkg -s`. When you reopen the PKGBUILD file in a text editor, it now has a git hash as the version name.

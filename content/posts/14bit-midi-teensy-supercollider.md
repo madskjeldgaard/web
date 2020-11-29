@@ -124,16 +124,16 @@ MIDIIn.connectAll;
 
 ~x = FourteenBitCC.new("x", 16, 48);
 ~x.func = {|val| 
-	var bits = 13,
+	var bits = 14,
 	maxval = (2**bits-1);
 
-	Ndef(\s).set(\carfreq, val.linexp(0, 2**13, 50.0,15000.0));
+	Ndef(\s).set(\carfreq, val.linexp(0, maxval, 50.0,15000.0));
 	("x: "++val).postln
 };
 
 ~y = FourteenBitCC.new("y", 17, 49, 0);
 ~y.func = {|val| 
-	var bits = 13,
+	var bits = 14,
 		maxval = (2**bits-1);
 
 	Ndef(\s).set(\freq, val.linexp(0, maxval, 50.0,5000.0));

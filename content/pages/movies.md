@@ -53,3 +53,14 @@ draft: false
 | Love Streams | John Cassavetes | USA | 1984
 | Borgman | Alex van Warmerdam | Netherlands | 2013
 | Naked | Mike Leigh | Britain | 1993
+| The Painted Bird | ? | Václav Marhoul | 2019
+| Apocalypse Now | USA | Francis ford Coppola | 1979
+| Fucking Åmål | Sweden | Lukas Moodyson | 1999
+| Le Feu Follet | Louis Malle | France | 1963
+| Oslo, 31. August | Joachim Trier | Norway | 2011
+| Lyset fra sjokoladefabrikken | Dag Johan Haugerud | Norway | 2020
+| Thelma & Louise | ? | ? | ?
+| Walkabout | ? | ? | ?
+
+
+
