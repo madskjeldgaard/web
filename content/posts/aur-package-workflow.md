@@ -257,3 +257,34 @@ pkgver() {
 }
 ```
 Quit your text editor, then run `makepkg -s`. When you reopen the PKGBUILD file in a text editor, it now has a git hash as the version name.
+
+### Cloning and locally updating an out-of-date package
+
+Sometimes packages aren't updated as regularly as you would want. 
+If there is a specific package you want the latest version of, but the maintainer has become unresponsive, you can download it to your computer and create a local version of the `PKGBUILD` file of the package.
+
+As an example, let's download `reaper-bin`
+
+```bash
+PKG_NAME="reaper-bin"
+AUR_URL="ssh://aur@aur.archlinux.org/$PKG_NAME.git"
+
+# Remote
+git clone $AUR_URL
+cd $PKG_NAME
+```
+
+Then open the `PKGBUILD` file in a text editor of your choice
+```bash
+nvim PKGBUILD
+```
+
+Then change the `pkgver` variable to the version number you would like.
+
+Exit your text editor and still from within the directory with the PKGBUILD in it, run
+`updpkgsums` to update the checksums in the package.
+
+And then, if all is well, you should be able to install the package like so:
+```bash
+makepkg -si --clean
+```
