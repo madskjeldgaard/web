@@ -8,6 +8,8 @@ draft: false
 
 Most of the software I develop as part of my practice is made available on [Github](https://github.com/madskjeldgaard/).
 
+- [tree-sitter-supercollider](https://github.com/madskjeldgaard/tree-sitter-supercollider) - Advanced, incremental code parser grammar adding support for the SuperCollider programming language in the tree-sitter parser.
+
 ## Instruments / Systems
 - [vortex](/projects/vortex) - A system for turbulent tape music 
 - [akkorder](https://github.com/madskjeldgaard/akkorder) - This repo contains the code used to generate the pieces for the release "Akkorder" by Mads Kjeldgaard.
